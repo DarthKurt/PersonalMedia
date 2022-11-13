@@ -24,7 +24,7 @@ internal sealed class FilesIndexer : IFilesIndexer
         try
         {
             _logger.LogInformation("Loading files meta information for path '{path}'...", path);
-            var items = _metaInfoLoader.LoadFromPath(path, cancellation);
+            var items = await _metaInfoLoader.LoadFromPath(path, cancellation);
 
             _logger.LogInformation("Saving files meta information to '{destination}'...", destination);
             await _entityFileSerializer.SaveFileAsync(items, destination, "index.json");
