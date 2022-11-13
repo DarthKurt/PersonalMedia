@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyName>PersonalMedia.WebDav.Indexer.Data.SQLite</AssemblyName>
+    <RootNamespace>PersonalMedia.WebDav.Indexer.Data.SQLite</RootNamespace>
+    <Description>Data persistance based on SQLite for WebDav Indexer.</Description>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <WarningsAsErrors>
+      CS8600;CS8601;CS8602;CS8603;CS8604;CS8613;CS8614;CS8619;CS8620;CS8622;CS8625;CS8629;CS8633,CS8767
+    </WarningsAsErrors>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Diagnostics" Version="8.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SQLite" Version="7.0.0" />
+  </ItemGroup>
+
+</Project>
