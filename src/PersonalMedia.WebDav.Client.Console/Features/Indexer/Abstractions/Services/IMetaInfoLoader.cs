@@ -1,4 +1,4 @@
-﻿using PersonalMedia.WebDav.Client.Console.Features.Indexer.Implementation.Data;
+﻿using PersonalMedia.WebDav.Client.Console.Features.Indexer.Abstractions.Data;
 
 namespace PersonalMedia.WebDav.Client.Console.Features.Indexer.Abstractions.Services;
 

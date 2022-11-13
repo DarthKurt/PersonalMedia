@@ -18,10 +18,23 @@ internal sealed class MetaInfoLoader : IMetaInfoLoader
     }
 
     private static FolderItem ToFolderItem(WebDavResource resource, IReadOnlyCollection<IItem> children)
-        => new(resource.DisplayName, resource.CreationDate, resource.LastModifiedDate, resource.ContentLength, GetPathFromUri(resource.Uri), children);
+        => new(
+            resource.DisplayName,
+            resource.CreationDate,
+            resource.LastModifiedDate,
+            resource.ContentLength,
+            GetPathFromUri(resource.Uri),
+            resource.ETag,
+            children);
 
     private static FileItem ToFileItem(WebDavResource resource)
-        => new(resource.DisplayName, resource.CreationDate, resource.LastModifiedDate, resource.ContentLength, GetPathFromUri(resource.Uri));
+        => new(
+            resource.DisplayName,
+            resource.CreationDate,
+            resource.LastModifiedDate,
+            resource.ContentLength,
+            GetPathFromUri(resource.Uri),
+            resource.ETag);
 
     private static IItem ToItem(WebDavResource r)
         => r.IsCollection ? ToFolderItem(r, Array.Empty<IItem>()) : ToFileItem(r);
