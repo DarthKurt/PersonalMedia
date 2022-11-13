@@ -63,6 +63,6 @@ internal sealed class MetaInfoLoader : IMetaInfoLoader
         return response.Resources
             .Select(ToItem)
             .GroupBy(resource => resource.Path, StringComparer.OrdinalIgnoreCase)
-            .ToDictionary(g => g.Key, g => g.ToArray());
+            .ToDictionary(g => g.Key, g => g.OrderBy(i => i.Created).ToArray());
     }
 }
